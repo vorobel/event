@@ -1,0 +1,118 @@
+@import 'utils/libs';
+@import 'utils/vars';
+@import 'utils/mixins';
+@import 'utils/fonts';
+@import 'utils/reset';
+
+// Modules:
+// example: @import "modules/my-module.scss";
+
+// === variables ===
+$color-primary: #444444;
+$color-pink: #e71cb4;
+$color-white: #fff;
+// === /variables
+
+// === mixins ===
+@mixin font-primary {
+  font-family: 'Poppins', sans-serif;
+}
+@mixin font-secondary {
+  font-family: 'Open Sans', sans-serif;
+}
+// === /mixins ===
+
+
+// === common ===
+body {
+  @include font-primary;
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $color-primary;
+}
+.section-outer {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.section-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+a {
+  color: inherit;
+}
+// === /common ===
+
+
+// === Header ===
+
+.section-header {
+  height: 100vh;
+  background-image: url('/src/assets/img/bg.png');
+  background-size: cover;
+  color: $color-white;
+
+  &-nav {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 240px;
+
+    &__logo {
+      font-size: 33px;
+    }
+
+    &__menu {
+      display: flex;
+      li {
+        margin-left: 30px;
+        font-size: 16px;
+        transition: .2s;
+        border-bottom: 2px solid transparent;
+
+        &:hover {
+          color: $color-pink;
+          border-bottom: 2px solid $color-pink;
+        }
+      }
+    }
+  }
+
+  &-content {
+    text-align: center;
+
+    &__title {
+      font-size: 60px;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+    &__subtitle {
+      font-size: 30px;
+      margin-bottom: 80px;
+    }
+    &__btn {
+      button {
+        background-color: transparent;
+        color: inherit;
+        padding: 14px 20px;
+        border: 2px solid #dddddd;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// === /Header ===
+
+
+
+
+
+
+
+
